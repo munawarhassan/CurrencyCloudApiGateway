@@ -1,6 +1,12 @@
-spring:  
+spring: 
+  cloud:
+    config:
+      uri: ${currencyservice.configserverurl}
+      fail-fast: false 
   application:
     name: currencycloudapigateway
   profiles:
     active: dev
 
+server:
+  port: 8090 

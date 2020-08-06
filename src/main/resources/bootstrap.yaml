@@ -6,3 +6,7 @@ spring:
 
 server:
   port: 8090
+  
+  
+  
+# uri: ${currencyservice_configserverurl}

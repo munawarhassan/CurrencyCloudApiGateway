@@ -3,6 +3,16 @@ spring:
     config:
       uri: http://192.168.99.100:8888
       fail-fast: false
+    gateway:
+      routes:
+      - id: currencyexchangeservice
+        uri: lb://currencyexchangeservice
+        predicates:
+        - Path=/currencyexchange/**
+      - id: currencyconversionfactorservice
+        uri: lb://currencyconversionfactorservice
+        predicates:
+        - Path=/currencyconversionfactor/**
   sleuth:
     trace-id128: true
     sampler:
